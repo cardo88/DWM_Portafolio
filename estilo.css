@@ -1,0 +1,17 @@
+.container {
+    background-color: blue;
+    border: 1px solid red;
+    width: auto;
+    height: 50px;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+button{
+    border: 3px solid #73AD21;
+}
+#footpage{
+    font-family: verdana;
+    font-size: 20px;
+}
