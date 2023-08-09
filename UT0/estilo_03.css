@@ -1,0 +1,75 @@
+/*selector:pseudoclase*/
+a:hover{
+    background-color: burlywood;
+}
+
+/*selector:pseudo-elemento*/
+p::first-letter{
+    color:white;
+}
+
+h1::before{
+    content:" << pseduo-elemento::before >> ";
+    color:gray;
+}
+h1::after{
+    content:" << pseduo-elemento::after >> ";
+    color:gray;
+}
+
+/*Cominadores de decenentes*/
+div h2 {
+    color: green;
+}
+
+/*Cominadores de elementos hijos*/
+div > h3 {
+    color: blue;
+}
+
+/*Cominadores de hermanos adyacentes*/
+h1 + div {
+    color: blueviolet;
+}
+
+/*Cominadores de hermanos generales*/
+h4 ~ p {
+    color: tomato;
+}
+
+/*responsive*/
+.container1 {
+    background-color: blue;
+    border: 1px solid red;
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container2 {
+    background-color: green;
+    border: 10px solid red;
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    
+}
+
+.container3 {
+    background-color: indigo;
+    border: 1px solid red;
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    content: "height: 50px if height<400px";
+    color: white;
+}
+
+
+@media (height>400px){
+    .container3{
+        height: 200px;
+        content: "height: 200px if height>400px";
+    }
+}
