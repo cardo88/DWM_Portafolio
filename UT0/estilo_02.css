@@ -1,13 +1,19 @@
 /*selector:pseudoclase*/
-
+a:hover{
+    background-color: burlywood;
+}
 
 /*selector:pseudo-elemento*/
 p::first-letter{
     color:white;
 }
 
+h1::before{
+    content:" << pseduo-elemento::before >> ";
+    color:gray;
+}
 h1::after{
-    content:"pseduo-elemento";
+    content:" << pseduo-elemento::after >> ";
     color:gray;
 }
 
@@ -28,5 +34,5 @@ h1 + div {
 
 /*Cominadores de hermanos generales*/
 h4 ~ p {
-    color: blueviolet;
+    color: tomato;
 }
