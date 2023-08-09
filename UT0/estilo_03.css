@@ -62,7 +62,6 @@ h4 ~ p {
     width: auto;
     height: 50px;
     margin: 10px;
-    content: "height: 50px if height<400px";
     color: white;
 }
 
@@ -70,6 +69,8 @@ h4 ~ p {
 @media (height>400px){
     .container3{
         height: 200px;
-        content: "height: 200px if height>400px";
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
