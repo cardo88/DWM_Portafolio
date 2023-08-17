@@ -26,6 +26,23 @@
             ev.dataTransfer.setData("text", ev.target.id);
         }
 
+        function nodrop(ev) {
+            var data = ev.dataTransfer.getData("text");
+            if (ev.hasClass("accordion-body")) {
+                ev.preventDefault();
+                ev.target.appendChild(document.getElementById(data));
+            }
+        }
+
+        function nodrop(ev) {
+            var _target = $("#" + ev.target.id);
+            var data = ev.dataTransfer.getData("text");
+            if ($(_target).hasClass("dropZone")) {
+                ev.preventDefault();
+                ev.target.appendChild(document.getElementById(data));
+            }
+        }
+
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
@@ -41,49 +58,6 @@
 
 
     <div class="container">
-
-
-        <div class="row gx-3 gy-3">
-            <div class="col">
-                <div style="width: auto;height: 500px;text-align: center;border-color: black;border: 1px;border-style: solid;"
-                    draggable="true" id="contenedor1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img id="miElemento1" src="images/44alas.ico" style="width: 30px;" draggable="true"
-                        ondragstart="drag(event)">
-                    <div id="miElemento4" draggable="true" ondragstart="drag(event)">
-                        <div class="card text-bg-primary mb-3 text-center w-90">
-                            <div class="card-header">Tarjeta</div>
-                            <div>
-                                <img src="images/credit_card_PNG103.png" class="card-img-top w-50" alt="...">
-                                <span class="material-symbols-outlined">delete</span>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Tarjeta 1</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit, sed do eiusmod tempor...</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div style="width: auto;height: 500px;text-align: center;border-color: black;border: 1px;border-style: solid;"
-                    draggable="true" id="contenedor2" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img id="miElemento2" src="images/44alas.ico" style="width: 30px;" draggable="true"
-                        ondragstart="drag(event)">
-                </div>
-            </div>
-            <div class="col">
-                <div style="width: auto;height: 500px;text-align: center;border-color: black;border: 1px;border-style: solid;"
-                    draggable="true" id="contenedor3" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img id="miElemento3" src="images/44alas.ico" style="width: 30px;" draggable="true"
-                        ondragstart="drag(event)">
-                </div>
-            </div>
-        </div>
-
-
-
 
         <div class="row gx-3 gy-3">
             <div class="col-sm-4">
@@ -118,7 +92,7 @@
                                     </div>
 
                                     <div id="Card02" draggable="true" ondragstart="drag(event)">
-                                        <div class="card text-bg-primary mb-3 text-center w-90">
+                                        <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/Apps-Game-Cards-icon.png" class="card-img-top w-50"
@@ -129,13 +103,13 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a draggable="false" href="#" class="btn btn-primary">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div id="Card03" draggable="true" ondragstart="drag(event)">
-                                        <div class="card text-bg-primary mb-3 text-center w-90">
+                                        <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/contact_card.png" class="card-img-top w-50" alt="..."
