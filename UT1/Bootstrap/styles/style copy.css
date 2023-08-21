@@ -19,18 +19,3 @@ h1 {
   color: #00539f;
   text-shadow: 3px 3px 1px black;
 }
-
-#dropzone {
-  height: 200px;
-  width: 300px;
-  border: 2px dashed gray;
-  padding: 20px;
-}
-
-.draggable {
-  cursor: move;
-}
-
-.drag-over {
-  border: 2px solid blue;
-}
