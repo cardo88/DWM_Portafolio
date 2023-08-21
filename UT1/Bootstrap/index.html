@@ -18,68 +18,21 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
     <script>
-        const dropzone = document.getElementById("dropzone");
-        const draggables = document.querySelectorAll(".draggable");
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
 
-        // Establecer eventos para los elementos arrastrables
-        draggables.forEach((draggable) => {
-            draggable.addEventListener("dragstart", (e) => {
-                e.dataTransfer.setData("text/plain", e.target.textContent);
-                e.target.classList.add("dragging");
-            });
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
 
-            draggable.addEventListener("dragend", (e) => {
-                e.target.classList.remove("dragging");
-            });
-        });
-
-        // Establecer eventos para la zona de soltado
-        dropzone.addEventListener("dragenter", (e) => {
-            e.preventDefault();
-            dropzone.classList.add("drag-over");
-        });
-
-        dropzone.addEventListener("dragover", (e) => {
-            e.preventDefault();
-        });
-
-        dropzone.addEventListener("dragleave", (e) => {
-            dropzone.classList.remove("drag-over");
-        });
-
-        dropzone.addEventListener("drop", (e) => {
-            e.preventDefault();
-            dropzone.classList.remove("drag-over");
-            const droppedItemText = e.dataTransfer.getData("text/plain");
-            const droppedItem = document.createTextNode(droppedItemText);
-            const li = document.createElement("li");
-            li.classList.add("draggable");
-            li.draggable = true;
-            li.appendChild(droppedItem);
-            dropzone.appendChild(li);
-        });
-
-        // Evitar el comportamiento por defecto del navegador para los elementos arrastrables
-        document.addEventListener("dragover", (e) => {
-            e.preventDefault();
-        });
-        document.addEventListener("drop", (e) => {
-            e.preventDefault();
-        });
-
-        document.addEventListener("drop", (e) => {
-            e.preventDefault();
-
-            if (e.target === dropzone) {
-                const droppedItemText = e.dataTransfer.getData("text/plain");
-                const droppedItem = document.createTextNode(droppedItemText);
-                const li = document.createElement("li");
-                li.classList.add("draggable");
-                li.draggable = true;
-                li.appendChild(droppedItem);
-                dropzone.appendChild(li);
+        function drop(ev) {
+            var data = ev.dataTransfer.getData("text");
+            if (ev.target.classList.contains("accordion-body")) {
+                ev.preventDefault();
+                ev.target.prepend(document.getElementById(data));
             }
-        });
+        }
     </script>
 
 
@@ -88,13 +41,6 @@
 <body>
     <h1>Intento de Trello</h1>
 
-
-    <div id="dropzone"></div>
-    <ul>
-        <li class="draggable" draggable="true">Elemento 1</li>
-        <li class="draggable" draggable="true">Elemento 2</li>
-        <li class="draggable" draggable="true">Elemento 3</li>
-    </ul>
 
     <div class="container">
 
@@ -113,8 +59,8 @@
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionBackLog">
                                 <div class="accordion-body">
-                                    <div id="Card01" draggable="true" ondragstart="drag(event)" class="draggable">
-                                        <div class="card text-bg-primary mb-3 text-center w-90 ">
+                                    <div id="Card01" draggable="true" class="TheCard" ondragstart="drag(event)">
+                                        <div class="card text-bg-primary mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/credit_card_PNG103.png" class="card-img-top w-50"
@@ -125,12 +71,12 @@
                                                 <h5 class="card-title">Tarjeta 1</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card02" draggable="true" ondragstart="drag(event)" class="draggable">
+                                    <div id="Card02" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -147,7 +93,7 @@
                                         </div>
                                     </div>
 
-                                    <div id="Card03" draggable="true" ondragstart="drag(event)" class="draggable">
+                                    <div id="Card03" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -159,7 +105,7 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +130,7 @@
                             <div id="collapseTwo" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionSprint">
                                 <div class="accordion-body">
-                                    <div id="Card04" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card04" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -196,12 +142,12 @@
                                                 <h5 class="card-title">Tarjeta 1</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card05" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card05" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -213,12 +159,12 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card06" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card06" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -230,7 +176,7 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
@@ -254,7 +200,7 @@
                             <div id="collapseThree" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionDone">
                                 <div class="accordion-body">
-                                    <div id="Card07" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card07" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -266,12 +212,12 @@
                                                 <h5 class="card-title">Tarjeta 1</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card08" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card08" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -283,12 +229,12 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card09" draggable="true" ondragstart="drag(event)">
+                                    <div id="Card09" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
@@ -300,7 +246,7 @@
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
