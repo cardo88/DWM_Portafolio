@@ -17,6 +17,10 @@
 
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
+    <script src="scripts/scripts.js"></script>
+
+
+
 </head>
 
 <body>
@@ -36,57 +40,63 @@
                                 BackLog
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show"
-                            data-bs-parent="#accordionBackLog">
-                            <div class="d-grid gap-2">
-                            </div>
-                            <div class="accordion-body">
-                                <div id="Card01" class="TheCard">
-                                    <div class="card text-bg-primary mb-3 text-center w-90">
-                                        <div class="card-header">Tarjeta</div>
-                                        <div>
-                                            <img src="images/credit_card_PNG103.png" class="card-img-top w-50"
-                                                alt="...">
-                                            <span class="material-symbols-outlined">delete</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Tarjeta 1</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor...</p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div draggable="true" id="dropBackLog" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionBackLog">
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-light" onclick="addCardInBackLog()">
+                                        <span class="material-symbols-outlined">library_add</span>
+                                    </button>
+                                </div>
+                                <div class="accordion-body">
+                                    <div id="Card01" draggable="true" class="TheCard" ondragstart="drag(event)">
+                                        <div class="card text-bg-primary mb-3 text-center w-90">
+                                            <div class="card-header">Tarjeta</div>
+                                            <div>
+                                                <img src="images/credit_card_PNG103.png" class="card-img-top w-50"
+                                                    alt="..." draggable="false">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Tarjeta 1</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                    elit, sed do eiusmod tempor...</p>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div id="Card02" class="TheCard">
-                                    <div class="card text-bg-primary mb-3 text-center w-90">
-                                        <div class="card-header">Tarjeta</div>
-                                        <div>
-                                            <img src="images/Apps-Game-Cards-icon.png" class="card-img-top w-50"
-                                                alt="...">
-                                            <span class="material-symbols-outlined">delete</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Tarjeta 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor...</p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <div id="Card02" draggable="true" class="TheCard" ondragstart="drag(event)">
+                                        <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
+                                            <div class="card-header">Tarjeta</div>
+                                            <div>
+                                                <img src="images/Apps-Game-Cards-icon.png" class="card-img-top w-50"
+                                                    alt="..." draggable="false">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Tarjeta 2</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                    elit, sed do eiusmod tempor...</p>
+                                                <a draggable="false" href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div id="Card03" class="TheCard">
-                                    <div class="card text-bg-primary mb-3 text-center w-90">
-                                        <div class="card-header">Tarjeta</div>
-                                        <div>
-                                            <img src="images/contact_card.png" class="card-img-top w-50" alt="...">
-                                            <span class="material-symbols-outlined">delete</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Tarjeta 2</h5>
-                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor...</p>
-                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <div id="Card03" draggable="true" class="TheCard" ondragstart="drag(event)">
+                                        <div draggable="false" class="card text-bg-primary mb-3 text-center w-90">
+                                            <div class="card-header">Tarjeta</div>
+                                            <div>
+                                                <img src="images/contact_card.png" class="card-img-top w-50" alt="..."
+                                                    draggable="false">
+                                                <span class="material-symbols-outlined">delete</span>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Tarjeta 2</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                    elit, sed do eiusmod tempor...</p>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -106,56 +116,62 @@
                                 Sprint
                             </button>
                         </h2>
-                        <div id="dropSprint">
+                        <div draggable="true" id="dropSprint" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div id="collapseTwo" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionSprint">
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-light">
+                                        <span class="material-symbols-outlined">library_add</span>
+                                    </button>
+                                </div>
                                 <div class="accordion-body">
-                                    <div id="Card04" class="TheCard">
+                                    <div id="Card04" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/credit_card_PNG103.png" class="card-img-top w-50"
-                                                    alt="...">
+                                                    alt="..." draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 1</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card05" class="TheCard">
+                                    <div id="Card05" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/Apps-Game-Cards-icon.png" class="card-img-top w-50"
-                                                    alt="...">
+                                                    alt="..." draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card06" class="TheCard">
+                                    <div id="Card06" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-warning mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
-                                                <img src="images/contact_card.png" class="card-img-top w-50" alt="...">
+                                                <img src="images/contact_card.png" class="card-img-top w-50" alt="..."
+                                                    draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
@@ -175,56 +191,62 @@
                                 Done
                             </button>
                         </h2>
-                        <div id="dropDone">
+                        <div draggable="true" id="dropDone" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <div id="collapseThree" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionDone">
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-light">
+                                        <span class="material-symbols-outlined">library_add</span>
+                                    </button>
+                                </div>
                                 <div class="accordion-body">
-                                    <div id="Card07" class="TheCard">
+                                    <div id="Card07" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/credit_card_PNG103.png" class="card-img-top w-50"
-                                                    alt="...">
+                                                    alt="..." draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 1</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card08" class="TheCard">
+                                    <div id="Card08" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
                                                 <img src="images/Apps-Game-Cards-icon.png" class="card-img-top w-50"
-                                                    alt="...">
+                                                    alt="..." draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div id="Card09" class="TheCard">
+                                    <div id="Card09" draggable="true" class="TheCard" ondragstart="drag(event)">
                                         <div class="card text-bg-success mb-3 text-center w-90">
                                             <div class="card-header">Tarjeta</div>
                                             <div>
-                                                <img src="images/contact_card.png" class="card-img-top w-50" alt="...">
+                                                <img src="images/contact_card.png" class="card-img-top w-50" alt="..."
+                                                    draggable="false">
                                                 <span class="material-symbols-outlined">delete</span>
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">Tarjeta 2</h5>
                                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
                                                     elit, sed do eiusmod tempor...</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                <a href="#" class="btn btn-primary" draggable="false">Go somewhere</a>
                                             </div>
                                         </div>
                                     </div>
@@ -234,7 +256,10 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
+    </div>
     </div>
 
 
