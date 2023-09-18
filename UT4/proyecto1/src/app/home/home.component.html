@@ -1,0 +1,26 @@
+<h1>This is the Home</h1>
+
+
+
+<table>
+    <tbody>
+        <tr *ngFor="let game of games">
+            <app-card [gameData]="games.name"></app-card>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games">
+            <td>{{ game.name }}</td>
+            <td>{{ game.rating }}</td>
+        </tr>
+    </tbody>
+</table>
