@@ -14,6 +14,8 @@ import { FinderComponent } from './finder/finder.component';
 import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { GetgamesService } from './services/getgames.service';
+import { CardListComponent } from './card-list/card-list.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { GetgamesService } from './services/getgames.service';
     NavigatorComponent,
     FinderComponent,
     CardComponent,
-    HomeComponent
+    HomeComponent,
+    CardListComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,
