@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ModalComponent } from './modal/modal.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { FinderComponent } from './finder/finder.component';
-import { CardComponent } from './card/card.component';
 import { HomeComponent } from './home/home.component';
 import { GetgamesService } from './services/getgames.service';
 import { CardListComponent } from './card-list/card-list.component';
@@ -26,7 +25,6 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
     ModalComponent,
     NavigatorComponent,
     FinderComponent,
-    CardComponent,
     HomeComponent,
     CardListComponent,
     CardDetailComponent

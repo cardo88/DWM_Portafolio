@@ -19,6 +19,7 @@ export class CardListComponent implements OnInit {
   public getGamesData() {
     this.httpService.getGameData().subscribe((data:any) => {
       this.games = data.results;
+      
     });
   }
 }
