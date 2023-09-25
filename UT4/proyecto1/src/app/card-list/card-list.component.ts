@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { GetgamesService } from '../services/getgames.service';
 import {Game} from '../game-data';
+//import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card-list',
@@ -8,6 +9,7 @@ import {Game} from '../game-data';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit {
+  starRating = 0;
   public games:Game[]=[];
   constructor(
     private httpService: GetgamesService) {}
