@@ -8,13 +8,11 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ModalComponent } from './modal/modal.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { FinderComponent } from './finder/finder.component';
 import { HomeComponent } from './home/home.component';
 import { GetgamesService } from './services/getgames.service';
 import { CardListComponent } from './card-list/card-list.component';
-import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 @NgModule({
@@ -22,12 +20,10 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ModalComponent,
     NavigatorComponent,
     FinderComponent,
     HomeComponent,
-    CardListComponent,
-    CardDetailComponent
+    CardListComponent
   ],
   imports: [
     BrowserModule,

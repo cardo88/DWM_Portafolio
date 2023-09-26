@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,12 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class AppComponent {
+
+  platformIdSelected: number = 20;
+
+  gameByPlatform(platformId:number) {
+    this.platformIdSelected = platformId;
+    console.log(this.platformIdSelected);
+  }
+
 }

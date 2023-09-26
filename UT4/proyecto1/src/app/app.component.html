@@ -1,15 +1,44 @@
-<div class="container bg-primary-subtle" >
+<div class="container bg-primary-subtle">
     <div class="row">
-        <app-header></app-header>
+        <div class="col-xl-0 col-lg-0 col-md-1 col-sm-2 col-xs-3">
+            <div class="d-block d-lg-none">
+                <nav>
+                    <ul>
+                        <li data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                            aria-controls="offcanvasScrolling">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+                                class="bi bi-text-indent-left" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                            </svg>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <app-navigator (callGameByPlatform)="gameByPlatform($event)"></app-navigator>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-11 col-sm-10 col-xs-9">
+            <app-header></app-header>
+        </div>
     </div>
     <div class="row">
-        <div class="col-sm-2">
-            <app-navigator></app-navigator>
+        <div class="col-lg-3 d-none d-lg-block">
+            <app-navigator (callGameByPlatform)="gameByPlatform($event)"></app-navigator>
         </div>
-        <div class="col-sm-10">
-            <app-home></app-home>
+        <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <app-home [platformSelected]="platformIdSelected"></app-home>
         </div>
     </div>
+
     <div class="row">
         <app-footer></app-footer>
     </div>

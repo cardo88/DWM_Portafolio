@@ -1,12 +1,23 @@
-
-
-<!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div>
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center">
+      <img src="https://pngimg.com/uploads/smiley/smiley_PNG36229.png" alt="..." width="65"
+        class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+        <h4 class="m-0">Filtro</h4>
+        <p class="font-weight-light text-muted mb-0">por consola</p>
+      </div>
+    </div>
+    <div *ngFor="let platform of platforms">
+      <div class="col">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" >
+            <button type="button" class="btn btn-outline-primary" (click)="gameByPlatform(platform.id)">
+              {{platform.name}}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="offcanvas-body">
-    <p>Try scrolling the rest of the page to see this option in action.</p>
-  </div>
-</div> -->
-
+</div>

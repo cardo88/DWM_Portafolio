@@ -8,11 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class GetgamesService {
 
+  key = "0f298e6465364e3192e689567cd70e24"
   constructor(
     private http: HttpClient) { }
 
   public getGameData(): Observable<any> {
-    return this.http.get("https://api.rawg.io/api/games?key=0f298e6465364e3192e689567cd70e24");
+    return this.http.get("https://api.rawg.io/api/games?key="+this.key);
+  }
+  public getPlatforms(): Observable<any> {
+    return this.http.get("https://api.rawg.io/api/platforms?key="+this.key);
+  }
+  public getGameDataByPlatform(platformId:number): Observable<any> {
+    return this.http.get("https://api.rawg.io/api/games?key="+this.key+"&platforms="+platformId);
   }
 }
-//0f298e6465364e3192e689567cd70e24
