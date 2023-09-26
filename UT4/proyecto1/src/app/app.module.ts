@@ -13,6 +13,7 @@ import { FinderComponent } from './finder/finder.component';
 import { HomeComponent } from './home/home.component';
 import { GetgamesService } from './services/getgames.service';
 import { CardListComponent } from './card-list/card-list.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CardListComponent } from './card-list/card-list.component';
     NavigatorComponent,
     FinderComponent,
     HomeComponent,
-    CardListComponent
+    CardListComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

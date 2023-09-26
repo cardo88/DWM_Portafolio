@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { GetgamesService } from '../services/getgames.service';
 import { Game } from '../game-data';
-//import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-card-list',
@@ -13,7 +14,9 @@ export class CardListComponent implements OnInit, OnChanges {
 
   public games: Game[] = [];
   constructor(
-    private httpService: GetgamesService) { }
+    private httpService: GetgamesService,
+    public modalService: NgbModal
+    ) { }
 
   ngOnInit(): void {
     this.getGamesData();
@@ -38,5 +41,13 @@ export class CardListComponent implements OnInit, OnChanges {
       this.getGamesData(this.platformSelected);
     }
   }
+  
+  openModal() {
+    //Here you define the name of your component
+    this.modalService.open(ModalComponent);
+    //This section is if you want to have any variable to initialize
+    //compConst.componentInstance.weight = undefined;
+}
+
 
 }
