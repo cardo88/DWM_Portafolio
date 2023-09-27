@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { GetgamesService } from './services/getgames.service';
 import { CardListComponent } from './card-list/card-list.component';
 import { ModalComponent } from './modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ModalComponent } from './modal/modal.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [GetgamesService],
   bootstrap: [AppComponent]

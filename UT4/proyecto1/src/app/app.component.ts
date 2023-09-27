@@ -14,7 +14,7 @@ export class AppComponent {
 
   gameByPlatform(platformId:number) {
     this.platformIdSelected = platformId;
-    console.log(this.platformIdSelected);
+    // console.log(this.platformIdSelected);
   }
 
 }

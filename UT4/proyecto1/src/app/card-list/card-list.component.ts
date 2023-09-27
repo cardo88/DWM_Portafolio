@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { GetgamesService } from '../services/getgames.service';
 import { Game } from '../game-data';
 import { ModalComponent } from '../modal/modal.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -10,16 +11,24 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit, OnChanges {
-  starRating = 0;
 
   public games: Game[] = [];
   constructor(
     private httpService: GetgamesService,
     public modalService: NgbModal
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.getGamesData();
+  }
+
+  //en caso de elegir una plataforma:
+  @Input() platformSelected: number; //= 999999999;
+  //en caso de elegir una plataforma:
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['platformSelected']) {
+      this.getGamesData(this.platformSelected);
+    }
   }
 
   public getGamesData(platformId?: number) {
@@ -27,27 +36,19 @@ export class CardListComponent implements OnInit, OnChanges {
       this.httpService.getGameDataByPlatform(platformId).subscribe((data: any) => {
         this.games = data.results;
       });
-      console.log(platformId + " getGamesByPlatform");
     } else {
       this.httpService.getGameData().subscribe((data: any) => {
         this.games = data.results
       });
     }
   }
-  @Input() platformSelected: number = 999999999;
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['platformSelected']) {
-      this.getGamesData(this.platformSelected);
-    }
+
+ openModal(gameId:number) {
+    const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.gameIdSelected = gameId;
+    console.log(gameId);
   }
-  
-  openModal() {
-    //Here you define the name of your component
-    this.modalService.open(ModalComponent);
-    //This section is if you want to have any variable to initialize
-    //compConst.componentInstance.weight = undefined;
-}
 
 
 }
