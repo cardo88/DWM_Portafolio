@@ -10,11 +10,14 @@
                     <!-- <ngb-rating [max]="5" [(rate)]="{{ game.rating }}" [readonly]="true"></ngb-rating> -->
                     <p class="card-text">Rating Count: {{ game.reviews_count }}</p>
                     <p class="card-text"><small class="text-body-secondary">Last update: {{game.updated}}</small></p>
+                    <button type="button" class="btn btn-primary" (click)="showModal(game.id)">MasDetalles</button>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <app-modal [gameIdSelected]="gameId" [modalDisplay]="modalDisplay"></app-modal> -->
+
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -47,7 +50,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

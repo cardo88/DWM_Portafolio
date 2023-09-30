@@ -21,4 +21,7 @@ export class GetgamesService {
   public getGameDataByPlatform(platformId:number): Observable<any> {
     return this.http.get("https://api.rawg.io/api/games?key="+this.key+"&platforms="+platformId);
   }
+  public getGamesDataById(id:number): Observable<any> {
+    return this.http.get("https://api.rawg.io/api/games?key="+this.key+"&id="+id);
+  }
 }

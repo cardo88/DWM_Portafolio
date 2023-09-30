@@ -12,6 +12,8 @@ export class CardListComponent implements OnInit, OnChanges {
   starRating = 0;
 
   public games: Game[] = [];
+  public modalDisplay: boolean;
+  public gameId: number;
   constructor(
     private httpService: GetgamesService) { }
 
@@ -37,6 +39,11 @@ export class CardListComponent implements OnInit, OnChanges {
     if (changes['platformSelected']) {
       this.getGamesData(this.platformSelected);
     }
+  }
+
+  showModal(gameId:number){
+    this.gameId = gameId;
+    this.modalDisplay = true;
   }
 
 }
