@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Game } from '../game-data';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,15 @@ import { Component, Input } from '@angular/core';
 export class HomeComponent{
   
   @Input() platformSelected: number;
+  gameSelected : any;
+
+  callGameSelected(game:Game) {
+    this.gameSelected = game;
+    console.log(game.id);
+  }
   
+  closeGame(){
+    this.gameSelected = null;
+  }
 
 }

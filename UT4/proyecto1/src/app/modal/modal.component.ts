@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { GetgamesService } from '../services/getgames.service';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+// import { GetgamesService } from '../services/getgames.service';
 import { Game } from '../game-data';
 
 @Component({
@@ -9,25 +9,38 @@ import { Game } from '../game-data';
 })
 export class ModalComponent implements OnInit {
 
-  public game: Game;
+  // public game: any;
 
   constructor(
-    private httpService: GetgamesService) { }
+    // private httpService: GetgamesService
+    ) {
+      // let modalDisplay = false;
+     }
 
 
-  @Input() gameIdSelected: number = 1;
-  @Input() modalDisplay: boolean = false;
+  @Input() gameSelected: Game;
+  // @Input() modalDisplay: string = "hidden";
 
 
   ngOnInit() {
-    this.getGamesDataById(this.gameIdSelected);
-    console.log(this.gameIdSelected);
+    // this.getGamesDataById(this.gameSelected);
+    // console.log(this.gameSelected.id);
+    // console.log(this.modalDisplay);
   }
 
-  public getGamesDataById(gameId: number) {
-    this.httpService.getGamesDataById(gameId).subscribe((data: any) => {
-      this.game = data.results
-      console.log(gameId);
-    });
+
+  ngOnChanges(changes: SimpleChanges) {
+    // this.gameSelected = changes['gameSelected'].currentValue;
+    // this.modalDisplay = changes['modalDisplay'].currentValue;
+    console.log(this.gameSelected.id);
+    // console.log(this.modalDisplay);
   }
+
+
+  // public getGamesDataById(gameId: number) {
+  //   this.httpService.getGamesDataById(gameId).subscribe((data: any) => {
+  //     this.game = data.results
+  //     console.log(gameId);
+  //   });
+  // }
 }
