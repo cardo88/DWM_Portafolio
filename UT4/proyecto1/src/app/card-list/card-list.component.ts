@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 import { GetgamesService } from '../services/getgames.service';
 import { Game } from '../game-data';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,6 +13,8 @@ export class CardListComponent implements OnInit, OnChanges {
   starRating = 0;
 
   public games: Game[] = [];
+  // public modalDisplay: string = "hidden";
+  // public gameSelected: Game;
   constructor(
     private httpService: GetgamesService) { }
 
@@ -37,6 +40,29 @@ export class CardListComponent implements OnInit, OnChanges {
     if (changes['platformSelected']) {
       this.getGamesData(this.platformSelected);
     }
+  }
+
+  // showModal(game:Game){
+  //   this.gameSelected = game;
+  //   this.modalDisplay = "visible";
+  //   console.log(this.gameSelected.id);
+  //   console.log(this.modalDisplay);
+  // }
+
+  // showModal(game: any) {
+  //   this.gameSelected = game;
+  //   console.log(this.gameSelected.id);
+  // }
+  
+  // closeGame(){
+  //   // this.selectedGame = null;
+  // }
+
+
+  @Output() callGameDetail = new EventEmitter<Game>();
+  showModal(gameSelected:Game) {
+    this.callGameDetail.emit(gameSelected);
+    console.log(gameSelected.id);
   }
 
 }

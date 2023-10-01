@@ -1,6 +1,6 @@
 <div class="row">
     <div *ngFor="let game of games" class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-        <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="col">
             <div class="card text-center text-bg-primary h-100">
                 <img [src]="game.background_image" class="card-img-top" />
                 <div class="card-body">
@@ -10,11 +10,18 @@
                     <!-- <ngb-rating [max]="5" [(rate)]="{{ game.rating }}" [readonly]="true"></ngb-rating> -->
                     <p class="card-text">Rating Count: {{ game.reviews_count }}</p>
                     <p class="card-text"><small class="text-body-secondary">Last update: {{game.updated}}</small></p>
+                    <button type="button" class="btn btn-primary" (click)="showModal(game)">MasDetalles</button>
+                    <!-- <div class="overlay" *ngIf="gameSelected">
+                        <app-modal [gameSelected]="gameSelected"></app-modal>
+                    </div> -->
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <app-modal [gameSelected]="gameSelected" [modalDisplay]="modalDisplay"></app-modal> -->
+        <!-- <app-modal [gameSelected]="game" [modalDisplay]="modalDisplay"></app-modal> -->
+
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -47,7 +54,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

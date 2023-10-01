@@ -1,0 +1,54 @@
+<div *ngIf="gameSelected">
+    <!-- <button class="closeButton" (click)="closeGame.emit()">X</button> -->
+    <!-- <h2 class="nameDetail">{{gameSelected.name}}</h2>
+    <img class="imgDetail" [src]="gameSelected.background_image" alt="{{gameSelected.name}} image"> -->
+    <img [src]="gameSelected.background_image" class="card-img-top" />
+    <p class="card-text">Released: {{gameSelected.released}}</p>
+    <p class="card-text">Rating: {{ gameSelected.rating }}</p>
+    <p class="card-text">Rating Count: {{ gameSelected.reviews_count }}</p>
+    <p class="card-text"><small class="text-body-secondary">Last update: {{gameSelected.updated}}</small></p>
+    <!-- <app-game-detail [selectedGame]="selectedGame"></app-game-detail> -->
+</div>
+
+
+<!-- <div id="overlay" (visibility)="modalDisplay"> -->
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ game.name }}</h1>
+                </div>
+                <div class="modal-body">
+                    <img [src]="game.background_image" class="card-img-top" />
+                    <p class="card-text">Released: {{game.released}}</p>
+                    <p class="card-text">Rating: {{ game.rating }}</p>
+                    <p class="card-text">Rating Count: {{ game.reviews_count }}</p>
+                    <p class="card-text"><small class="text-body-secondary">Last update: {{game.updated}}</small></p>
+                </div>
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner" *ngFor="let screenshot of game.short_screenshots">
+                        <div class="carousel-item active">
+                            <img [src]="screenshot.image" class="d-block w-100" [alt]="screenshot.id">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+<!-- </div> -->
