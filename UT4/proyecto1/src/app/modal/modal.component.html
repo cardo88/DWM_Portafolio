@@ -1,35 +1,24 @@
 <div *ngIf="gameSelected">
-    <!-- <button class="closeButton" (click)="closeGame.emit()">X</button> -->
-    <!-- <h2 class="nameDetail">{{gameSelected.name}}</h2>
-    <img class="imgDetail" [src]="gameSelected.background_image" alt="{{gameSelected.name}} image"> -->
-    <img [src]="gameSelected.background_image" class="card-img-top" />
-    <p class="card-text">Released: {{gameSelected.released}}</p>
-    <p class="card-text">Rating: {{ gameSelected.rating }}</p>
-    <p class="card-text">Rating Count: {{ gameSelected.reviews_count }}</p>
-    <p class="card-text"><small class="text-body-secondary">Last update: {{gameSelected.updated}}</small></p>
-    <!-- <app-game-detail [selectedGame]="selectedGame"></app-game-detail> -->
-</div>
-
-
-<!-- <div id="overlay" (visibility)="modalDisplay"> -->
-
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ game.name }}</h1>
+    <div class="card mb-3" style="width: 80%; margin: 25px;">
+        <div class="row g-0">
+            <div class="col-sm-3 d-none d-sm-block">
+                <div *ngFor="let img of gameSelected.short_screenshots">
+                    <img [src]="img.image" class="img-fluid" [alt]="img.image">
                 </div>
-                <div class="modal-body">
-                    <img [src]="game.background_image" class="card-img-top" />
-                    <p class="card-text">Released: {{game.released}}</p>
-                    <p class="card-text">Rating: {{ game.rating }}</p>
-                    <p class="card-text">Rating Count: {{ game.reviews_count }}</p>
-                    <p class="card-text"><small class="text-body-secondary">Last update: {{game.updated}}</small></p>
-                </div>
-                <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                    <div class="carousel-inner" *ngFor="let screenshot of game.short_screenshots">
-                        <div class="carousel-item active">
-                            <img [src]="screenshot.image" class="d-block w-100" [alt]="screenshot.id">
+                <!-- REVISAR POR QUE NO ANDA ///////////////////////////////////////////////////////////////////////////////-->
+                <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                    <div class="carousel-inner">
+                        <div *ngFor="let img of gameSelected.short_screenshots; let i = index">
+                            <ng-template *ngIf="i==1 ; else elseBlock">
+                                <div class="carousel-item active">
+                                    <img [src]="img.image" class="d-block w-100" [alt]="img.image">
+                                </div>
+                            </ng-template>
+                            <ng-template #elseBlock>
+                                <div class="carousel-item">
+                                    <img [src]="img.image" class="d-block w-100" [alt]="img.image">
+                                </div>
+                            </ng-template>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
@@ -42,13 +31,32 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
-                <div class="modal-footer">
+                </div> -->
+            </div>
+            <div class="col-sm-9 col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{gameSelected.name}}</h5>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <p class="card-text">Released: {{gameSelected.released}}</p>
+                    <div class="card-text">Genres: </div>
+                    <div *ngFor="let genre of gameSelected.genres">
+                        <div class="card-text"> - - > {{genre.name}}</div>
+                    </div>
+                    <div class="card-text">Platforms: </div>
+                    <!-- REVISAR POR QUE NO ANDA ///////////////////////////////////////////////////////////////////////////////-->
+                    <!-- <div *ngFor="let platform of gameSelected.parent_platforms">
+                            <div class="card-text"> - - > {{platform.details.name}}</div>
+                        </div> -->
+                    <p></p>
+                    <div class="card-text">Reating: {{gameSelected.rating}}</div>
+                    <div *ngFor="let rating of gameSelected.ratings">
+                        <div class="card-text"> - - > Type: {{rating.title}} #: {{rating.count}}</div>
+                    </div>
+                    <div class="card-text">Reating Count: {{gameSelected.ratings_count}}</div>
+
+
                 </div>
             </div>
         </div>
-    </div> -->
-
-
-
-<!-- </div> -->
+    </div>
+</div>

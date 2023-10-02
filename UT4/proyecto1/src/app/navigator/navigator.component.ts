@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetgamesService } from '../services/getgames.service';
-import { GamePlatform } from '../game-platform';
+import { GamePlatformDetail } from '../game-platform-detail';
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ import { Output, EventEmitter } from '@angular/core';
 export class NavigatorComponent implements OnInit {
 
   platformSelected = 0;
-  public platforms: GamePlatform[] = [];
+  public platforms: GamePlatformDetail[] = [];
   constructor(
     private httpService: GetgamesService) { }
 

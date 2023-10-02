@@ -1,4 +1,4 @@
+import { GamePlatformDetail } from "./game-platform-detail";
 export interface GamePlatform {
-    id: number;
-    name: string; //"PlayStation"
+    details: GamePlatformDetail;
 }
