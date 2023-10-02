@@ -1,4 +1,11 @@
-<div class="overlay" *ngIf="gameSelected" (click)="closeGame()">
+<div class="overlay" *ngIf="gameSelected">
+    <div>
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-link active" aria-current="page" href="#" (click)="closeGame()">
+                Close
+            </a>
+          </nav>
+    </div>
     <app-modal [gameSelected]="gameSelected"></app-modal>
 </div>
 <app-card-list [platformSelected]="platformSelected" (callGameDetail)="callGameSelected($event)"></app-card-list>

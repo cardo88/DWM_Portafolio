@@ -7,8 +7,6 @@
                     <h5 class="card-title">{{ game.name }}</h5>
                     <p class="card-text">Released: {{game.released}}</p>
                     <p class="card-text">Rating: {{ game.rating }}</p>
-                    <!-- <ngb-rating [max]="5" [(rate)]="{{ game.rating }}" [readonly]="true"></ngb-rating> -->
-                    <p class="card-text">Rating Count: {{ game.reviews_count }}</p>
                     <p class="card-text"><small class="text-body-secondary">Last update: {{game.updated}}</small></p>
                     <button type="button" class="btn btn-primary" (click)="showModal(game)">MasDetalles</button>
                     <!-- <div class="overlay" *ngIf="gameSelected">
