@@ -35,6 +35,7 @@ export class NavigatorComponent implements OnInit {
   @Output() gameNameSearched = new EventEmitter<string>();
   searchThis(value: string) {
     this.gameNameSearched.emit(value);
+    console.log(value);
   }
   
 }

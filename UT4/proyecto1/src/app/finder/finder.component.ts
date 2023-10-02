@@ -11,5 +11,6 @@ export class FinderComponent {
 
   searchThis(value:string){
     this.gameNameSearched.emit(value);
+    console.log(value);
   }
 }
