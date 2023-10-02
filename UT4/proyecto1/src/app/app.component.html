@@ -21,7 +21,10 @@
                         </button>
                     </div>
                     <div class="offcanvas-body">
-                        <app-navigator (callGameByPlatform)="gameByPlatform($event)"></app-navigator>
+                        <app-navigator 
+                            (callGameByPlatform)="gameByPlatform($event)"
+                            (gameNameSearched)="gameByName($event)">
+                        </app-navigator>
                     </div>
                 </div>
             </div>
@@ -32,10 +35,16 @@
     </div>
     <div class="row">
         <div class="col-lg-3 d-none d-lg-block">
-            <app-navigator (callGameByPlatform)="gameByPlatform($event)"></app-navigator>
+            <app-navigator 
+                (callGameByPlatform)="gameByPlatform($event)"
+                (gameNameSearched)="gameByName($event)">
+            </app-navigator>
         </div>
         <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <app-home [platformSelected]="platformIdSelected"></app-home>
+            <app-home 
+                [platformSelected]="platformIdSelected"
+                [nameSelected]="nameSelected">
+            </app-home>
         </div>
     </div>
 

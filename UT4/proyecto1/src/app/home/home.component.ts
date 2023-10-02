@@ -9,11 +9,12 @@ import { Game } from '../game-data';
 export class HomeComponent{
   
   @Input() platformSelected: number;
+  @Input() nameSelected: string;
   gameSelected : any;
-
+  
   callGameSelected(game:Game) {
     this.gameSelected = game;
-    console.log(game.id);
+    //console.log(game.id);
   }
   
   closeGame(){

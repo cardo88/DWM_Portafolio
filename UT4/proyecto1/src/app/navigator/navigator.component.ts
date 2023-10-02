@@ -28,7 +28,13 @@ export class NavigatorComponent implements OnInit {
   @Output() callGameByPlatform = new EventEmitter<number>();
   gameByPlatform(platformId:number) {
     this.callGameByPlatform.emit(platformId);
-    console.log(platformId);
+    //console.log(platformId);
+  }
+
+
+  @Output() gameNameSearched = new EventEmitter<string>();
+  searchThis(value: string) {
+    this.gameNameSearched.emit(value);
   }
   
 }

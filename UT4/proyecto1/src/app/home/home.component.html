@@ -8,4 +8,8 @@
     </div>
     <app-modal [gameSelected]="gameSelected"></app-modal>
 </div>
-<app-card-list [platformSelected]="platformSelected" (callGameDetail)="callGameSelected($event)"></app-card-list>
+<app-card-list 
+    [platformSelected]="platformSelected" 
+    [nameSelected]="nameSelected" 
+    (callGameDetail)="callGameSelected($event)">
+</app-card-list>

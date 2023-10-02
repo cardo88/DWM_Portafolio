@@ -1,1 +1,4 @@
-<p>finder works!</p>
+<form class="d-flex" role="search">
+    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" #nameSearch>
+    <button class="btn btn-outline-primary" type="button" (click)="searchThis(nameSearch.value)">Search</button>
+</form>

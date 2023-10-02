@@ -10,11 +10,16 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class AppComponent {
 
-  platformIdSelected: number = 20;
-
+  platformIdSelected: number = 0;
   gameByPlatform(platformId:number) {
     this.platformIdSelected = platformId;
-    console.log(this.platformIdSelected);
+    //console.log(this.platformIdSelected);
+  }
+
+  nameSelected: string = "worms";
+  gameByName(value:string) {
+    this.nameSelected = value;
+    //console.log(this.nameSelected);
   }
 
 }

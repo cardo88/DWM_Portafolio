@@ -24,4 +24,8 @@ export class GetgamesService {
   public getGamesDataById(id:number): Observable<any> {
     return this.http.get("https://api.rawg.io/api/games?key="+this.key+"&id="+id);
   }
+  public getGamesDataByName(name:string): Observable<any> {
+    return this.http.get("https://api.rawg.io/api/games?key="+this.key+"&name="+name);
+  }
+  //https://api.rawg.io/api/games?key=0f298e6465364e3192e689567cd70e24&name=worms
 }

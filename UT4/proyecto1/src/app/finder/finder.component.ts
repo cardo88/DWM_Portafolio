@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-finder',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class FinderComponent {
 
+  @Output() gameNameSearched = new EventEmitter<string>();
+
+  searchThis(value:string){
+    this.gameNameSearched.emit(value);
+  }
 }

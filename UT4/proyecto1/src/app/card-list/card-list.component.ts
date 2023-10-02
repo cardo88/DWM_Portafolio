@@ -28,17 +28,28 @@ export class CardListComponent implements OnInit, OnChanges {
         this.games = data.results;
       });
       console.log(platformId + " getGamesByPlatform");
+    } else if (platformId == 888888888888) {
+      this.httpService.getGamesDataByName(this.nameSelected).subscribe((data: any) => {
+        this.games = data.results
+      });
     } else {
       this.httpService.getGameData().subscribe((data: any) => {
         this.games = data.results
       });
     }
   }
+
   @Input() platformSelected: number = 999999999;
+  // platformSelected == 888888888888 => search by name!
+  @Input() nameSelected: string = "worms";
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['platformSelected']) {
       this.getGamesData(this.platformSelected);
+      console.log(this.platformSelected);
+    } else if (changes['gameNameSearched']) {
+      this.getGamesData(888888888888); //aca hice chanchada!!
+      console.log(this.nameSelected);
     }
   }
 
@@ -53,14 +64,14 @@ export class CardListComponent implements OnInit, OnChanges {
   //   this.gameSelected = game;
   //   console.log(this.gameSelected.id);
   // }
-  
+
   // closeGame(){
   //   // this.selectedGame = null;
   // }
 
 
   @Output() callGameDetail = new EventEmitter<Game>();
-  showModal(gameSelected:Game) {
+  showModal(gameSelected: Game) {
     this.callGameDetail.emit(gameSelected);
     console.log(gameSelected.id);
   }
