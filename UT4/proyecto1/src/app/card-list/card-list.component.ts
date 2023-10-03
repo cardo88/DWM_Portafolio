@@ -27,11 +27,12 @@ export class CardListComponent implements OnInit, OnChanges {
       this.httpService.getGameDataByPlatform(platformId).subscribe((data: any) => {
         this.games = data.results;
       });
-      console.log(platformId + " getGamesByPlatform");
-    } else if (platformId == 888888888888) {
-      this.httpService.getGamesDataByName(this.nameSelected).subscribe((data: any) => {
-        this.games = data.results
-      });
+      //console.log(platformId + " getGamesByPlatform");
+    // } else if (platformId == -1) {
+    //   this.httpService.getGameData().subscribe((data: any) => {
+    //     this.games = data.results
+    //     console.log(this.nameSelected);
+    //   });
     } else {
       this.httpService.getGameData().subscribe((data: any) => {
         this.games = data.results
@@ -39,41 +40,41 @@ export class CardListComponent implements OnInit, OnChanges {
     }
   }
 
-  @Input() platformSelected: number = 999999999;
+  @Input() platformSelected: number = -1;
   // platformSelected == 888888888888 => search by name!
-  @Input() nameSelected: string = "worms";
+  @Input() nameSelected: string = "";
+  //public emtpyName = "";
 
   ngOnChanges(changes: SimpleChanges) {
+    // if (changes['nameSelected']) {
+    //   if (this.nameSelected != "") {
+    //     this.getGamesData(-1);
+    //   }
+    //   console.log(this.nameSelected);
+    // } else {
+    //   this.nameSelected = "";
+    // }
     if (changes['platformSelected']) {
       this.getGamesData(this.platformSelected);
-      console.log(this.platformSelected);
-    } else if (changes['gameNameSearched']) {
-      this.getGamesData(888888888888); //aca hice chanchada!!
-      console.log(this.nameSelected);
-    }
+      //console.log(this.platformSelected);
+    } 
   }
-
-  // showModal(game:Game){
-  //   this.gameSelected = game;
-  //   this.modalDisplay = "visible";
-  //   console.log(this.gameSelected.id);
-  //   console.log(this.modalDisplay);
-  // }
-
-  // showModal(game: any) {
-  //   this.gameSelected = game;
-  //   console.log(this.gameSelected.id);
-  // }
-
-  // closeGame(){
-  //   // this.selectedGame = null;
-  // }
 
 
   @Output() callGameDetail = new EventEmitter<Game>();
   showModal(gameSelected: Game) {
     this.callGameDetail.emit(gameSelected);
     console.log(gameSelected.id);
+  }
+
+  containsSubstring(name: string) {
+    console.log(this.nameSelected);
+    return name.toLowerCase().indexOf(this.nameSelected.toLowerCase()) !== -1;
+  }
+
+  checkSearchEmpty(){
+    console.log(this.nameSelected);
+    return this.nameSelected == "";
   }
 
 }

@@ -16,10 +16,10 @@ export class AppComponent {
     //console.log(this.platformIdSelected);
   }
 
-  nameSelected: string = "worms";
+  nameSelected: string = "";
   gameByName(value:string) {
     this.nameSelected = value;
-    //console.log(this.nameSelected);
+    console.log(value);
   }
 
 }
