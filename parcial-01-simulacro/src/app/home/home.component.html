@@ -1,0 +1,28 @@
+
+<h2> Lista de articulos</h2>
+<div class="continter">
+    <div class="row">
+        <table>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-xs-4">Nombre</th>
+                <th class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">Precio</th>
+                <th class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">Stock</th>
+            </tr>
+            <tr *ngFor="let producto of productos">
+                <td class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-xs-4">{{producto.nombre}}</td>
+                <td class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">{{producto.precio}}</td>
+                <td class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">{{producto.stock}}</td>
+                <td class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-4"><button [routerLink]="['/detail',producto.id]">MasDetalles</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- 
+    id : number;
+nombre : string;
+precio : number;
+stock : number;
+imagen : string;
+ -->
