@@ -1,0 +1,20 @@
+
+
+<h2>Producto seleccionado</h2>
+
+<ol>
+    <li>
+        Nombre del producto: {{producto.nombre}}
+    </li>
+    <li>
+        Precio del producto: {{producto.precio}}
+    </li>
+    <li>
+        Stock disponible del producto: {{producto.stock}}
+    </li>
+    <li>
+        {{producto.imagen}}
+    </li>
+</ol>
+
+<button [routerLink]="['/home-json']">Volver al home</button>

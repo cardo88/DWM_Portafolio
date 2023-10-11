@@ -13,14 +13,12 @@
                 <td class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-xs-4">{{producto.nombre}}</td>
                 <td class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">{{producto.precio}}</td>
                 <td class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2">{{producto.stock}}</td>
-                <td class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-4"><button [routerLink]="['/detail',producto.id]">MasDetalles</button></td>
+                <td class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-4"><button [routerLink]="['/detail-json',producto.id]">MasDetalles</button></td>
             </tr>
         </table>
     </div>
 </div>
-
-<button [routerLink]="['/home-json']">Home JSON</button>
-
+<button [routerLink]="['/home']">Volver al home sin JSON</button>
 
 <!-- 
     id : number;

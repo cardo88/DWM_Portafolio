@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
+import { HomeJsonComponent } from './home-json/home-json.component';
+import { DetailJsonComponent } from './detail-json/detail-json.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    HomeJsonComponent,
+    DetailJsonComponent
   ],
   imports: [
     BrowserModule,
