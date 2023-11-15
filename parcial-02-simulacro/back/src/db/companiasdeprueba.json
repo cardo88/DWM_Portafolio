@@ -1,0 +1,18 @@
+[
+    { "nombre": "Empresa A", "sitioweb": "www.empresaA.com", "notas": ["Notas de Empresa A"] },
+    { "nombre": "Empresa B", "sitioweb": "www.empresaB.com", "notas": ["Notas de Empresa B"] },
+    { "nombre": "Compañía XYZ", "sitioweb": "www.companiaXYZ.com", "notas": ["Notas de Compañía XYZ"] },
+    { "nombre": "Corporación ABC", "sitioweb": "www.corporacionABC.com", "notas": ["Notas de Corporación ABC"] },
+    { "nombre": "Empresa Innovadora", "sitioweb": "www.innovadora.com", "notas": ["Notas de Empresa Innovadora"] },
+    { "nombre": "S.A. Desarrollos", "sitioweb": "www.sadesarrollos.com", "notas": ["Notas de S.A. Desarrollos"] },
+    { "nombre": "Industrias Avanzadas", "sitioweb": "www.industriasavanzadas.com", "notas": ["Notas de Industrias Avanzadas"] },
+    { "nombre": "Grupo Empresarial Z", "sitioweb": "www.grupoZ.com", "notas": ["Notas de Grupo Empresarial Z"] },
+    { "nombre": "Soluciones Empresariales S.R.L.", "sitioweb": "www.solucionessrl.com", "notas": ["Notas de Soluciones Empresariales S.R.L."] },
+    { "nombre": "Tech Innovators", "sitioweb": "www.techinnovators.com", "notas": ["Notas de Tech Innovators"] },
+    { "nombre": "Fábrica de Ideas Creativas", "sitioweb": "www.fabricaideas.com", "notas": ["Notas de Fábrica de Ideas Creativas"] },
+    { "nombre": "Consultoría Estratégica Global", "sitioweb": "www.consultoriaestrategica.com", "notas": ["Notas de Consultoría Estratégica Global"] },
+    { "nombre": "Inversiones Financieras S.A.", "sitioweb": "www.inversionesfinancieras.com", "notas": ["Notas de Inversiones Financieras S.A."] },
+    { "nombre": "Grupo Logístico Internacional", "sitioweb": "www.grupologistico.com", "notas": ["Notas de Grupo Logístico Internacional"] },
+    { "nombre": "Marketing y Publicidad Creativa", "sitioweb": "www.marketingcreativo.com", "notas": ["Notas de Marketing y Publicidad Creativa"] }
+  ]
+  

@@ -5,7 +5,10 @@ import authenticateJWT from '../middlewares/authenticateJWT';
 const router = express.Router();
 
 // Rutas para empresas
-router.get('/search', authenticateJWT, companyController.searchCompanies);
-// ... (agrega más rutas según sea necesario)
+router.post('/', authenticateJWT, companyController.add);
+router.delete('/:id', authenticateJWT, companyController.remove);
+router.get('/', authenticateJWT, companyController.getAll);
+router.get('/:id', authenticateJWT, companyController.getById);
+
 
 export default router;
