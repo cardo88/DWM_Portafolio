@@ -1,11 +1,9 @@
-import { Company } from "./companyModel";
-
 export interface Person {
     id: number;
     nombre: string;
     apellido: string;
     email: string;
     telefono: string;
-    empresa: Company;
+    empresa: number;
     notas: string[];
   }

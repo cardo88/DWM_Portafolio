@@ -85,3 +85,9 @@ export const getById = (req: Request, res: Response) => {
 
   res.json({ persona });
 };
+
+
+export const companyHasPeople = (companyId: number): boolean => {
+  // Verificar si hay personas asociadas a la compañía
+  return people.some(persona => persona.empresa === companyId);
+};

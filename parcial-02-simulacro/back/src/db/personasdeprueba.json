@@ -4,7 +4,7 @@
         "apellido": "Gómez",
         "email": "juan@example.com",
         "telefono": "1234567890",
-        "empresa": "Corp ABC",
+        "empresa": 1,
         "notas": "Algunas notas"
     },
     {
@@ -12,7 +12,7 @@
         "apellido": "López",
         "email": "maria@example.com",
         "telefono": "9876543210",
-        "empresa": "XYZ Ltda",
+        "empresa": 2,
         "notas": "Notas adicionales"
     },
     {
@@ -20,7 +20,7 @@
         "apellido": "Martínez",
         "email": "carlos@example.com",
         "telefono": "5551234567",
-        "empresa": "Industrias 123",
+        "empresa": 1,
         "notas": "Reunión programada"
     },
     {
@@ -28,7 +28,7 @@
         "apellido": "Rodríguez",
         "email": "elena@example.com",
         "telefono": "7890123456",
-        "empresa": "Innovadores Tecnológicos",
+        "empresa": 2,
         "notas": "Seguimiento la próxima semana"
     },
     {
@@ -36,7 +36,7 @@
         "apellido": "Sánchez",
         "email": "luis@example.com",
         "telefono": "1112233444",
-        "empresa": "Desarrollo Web S.A.",
+        "empresa": 1,
         "notas": "Llamada pendiente"
     },
     {
@@ -44,7 +44,7 @@
         "apellido": "Fernández",
         "email": "ana@example.com",
         "telefono": "9998887777",
-        "empresa": "Consultores Asociados",
+        "empresa": 2,
         "notas": "Enviar propuesta"
     },
     {
@@ -52,7 +52,7 @@
         "apellido": "Hernández",
         "email": "pedro@example.com",
         "telefono": "4445556666",
-        "empresa": "Soluciones Empresariales",
+        "empresa": 1,
         "notas": "Revisar contrato"
     },
     {
@@ -60,7 +60,7 @@
         "apellido": "García",
         "email": "sofia@example.com",
         "telefono": "7778889999",
-        "empresa": "Inversiones Financieras",
+        "empresa": 2,
         "notas": "Confirmar reunión"
     },
     {
@@ -68,7 +68,7 @@
         "apellido": "Pérez",
         "email": "alejandro@example.com",
         "telefono": "3332221111",
-        "empresa": "Innovación y Desarrollo",
+        "empresa": 1,
         "notas": "Actualizar información"
     },
     {
@@ -76,7 +76,7 @@
         "apellido": "Jiménez",
         "email": "laura@example.com",
         "telefono": "6665554444",
-        "empresa": "Comunicaciones Globales",
+        "empresa": 3,
         "notas": "Seguimiento de proyecto"
     },
     {
@@ -84,7 +84,7 @@
         "apellido": "Ruiz",
         "email": "hector@example.com",
         "telefono": "1239874560",
-        "empresa": "Servicios Logísticos",
+        "empresa": 3,
         "notas": "Envío de cotización"
     },
     {
@@ -92,7 +92,7 @@
         "apellido": "Mendoza",
         "email": "isabel@example.com",
         "telefono": "7894561230",
-        "empresa": "Inversiones Internacionales",
+        "empresa": 3,
         "notas": "Acordar fecha de entrega"
     },
     {
@@ -100,7 +100,7 @@
         "apellido": "Navarro",
         "email": "ricardo@example.com",
         "telefono": "3216549870",
-        "empresa": "Desarrollo de Software",
+        "empresa": 3,
         "notas": "Revisión de propuesta"
     },
     {
@@ -108,7 +108,7 @@
         "apellido": "Gutiérrez",
         "email": "carmen@example.com",
         "telefono": "4567890123",
-        "empresa": "Consultoría Legal",
+        "empresa": 1,
         "notas": "Reunión de seguimiento"
     },
     {
@@ -116,7 +116,7 @@
         "apellido": "Vega",
         "email": "pablo@example.com",
         "telefono": "9876543210",
-        "empresa": "Servicios Financieros",
+        "empresa": 2,
         "notas": "Contactar la próxima semana"
     }
 ]

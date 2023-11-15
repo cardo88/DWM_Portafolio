@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import peopleRoutes from './routes/peopleRoutes';
 import companyRoutes from './routes/companyRoutes';
-import authRoutes from './routes/authRoutes';
 import authenticateJWT from './middlewares/authenticateJWT';
 import loginRouter from './routes/loginRoutes';
 import protectedRouter from './routes/protectedRoutes';
@@ -16,7 +15,6 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 // Rutas para autenticación
-// app.use('/auth', authRoutes);
 app.use("/api", loginRouter);
 app.use("/api", protectedRouter);
 
@@ -35,7 +33,7 @@ app.use('/companies', companyRoutes);
 // Rutas de ejemplo
 app.get('/', (req, res) => {
   res.json({ message: 
-    ' Bienvenido al Backend de este webapp! Disponibles /people y /companies' });
+    ' Bienvenido al Backend de este webapp! Disponibles /api, /people y /companies' });
 });
 
 app.listen(PORT, () => {
