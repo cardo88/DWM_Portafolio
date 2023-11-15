@@ -1,0 +1,122 @@
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Gómez",
+        "email": "juan@example.com",
+        "telefono": "1234567890",
+        "empresa": "Corp ABC",
+        "notas": "Algunas notas"
+    },
+    {
+        "nombre": "María",
+        "apellido": "López",
+        "email": "maria@example.com",
+        "telefono": "9876543210",
+        "empresa": "XYZ Ltda",
+        "notas": "Notas adicionales"
+    },
+    {
+        "nombre": "Carlos",
+        "apellido": "Martínez",
+        "email": "carlos@example.com",
+        "telefono": "5551234567",
+        "empresa": "Industrias 123",
+        "notas": "Reunión programada"
+    },
+    {
+        "nombre": "Elena",
+        "apellido": "Rodríguez",
+        "email": "elena@example.com",
+        "telefono": "7890123456",
+        "empresa": "Innovadores Tecnológicos",
+        "notas": "Seguimiento la próxima semana"
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Sánchez",
+        "email": "luis@example.com",
+        "telefono": "1112233444",
+        "empresa": "Desarrollo Web S.A.",
+        "notas": "Llamada pendiente"
+    },
+    {
+        "nombre": "Ana",
+        "apellido": "Fernández",
+        "email": "ana@example.com",
+        "telefono": "9998887777",
+        "empresa": "Consultores Asociados",
+        "notas": "Enviar propuesta"
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "Hernández",
+        "email": "pedro@example.com",
+        "telefono": "4445556666",
+        "empresa": "Soluciones Empresariales",
+        "notas": "Revisar contrato"
+    },
+    {
+        "nombre": "Sofía",
+        "apellido": "García",
+        "email": "sofia@example.com",
+        "telefono": "7778889999",
+        "empresa": "Inversiones Financieras",
+        "notas": "Confirmar reunión"
+    },
+    {
+        "nombre": "Alejandro",
+        "apellido": "Pérez",
+        "email": "alejandro@example.com",
+        "telefono": "3332221111",
+        "empresa": "Innovación y Desarrollo",
+        "notas": "Actualizar información"
+    },
+    {
+        "nombre": "Laura",
+        "apellido": "Jiménez",
+        "email": "laura@example.com",
+        "telefono": "6665554444",
+        "empresa": "Comunicaciones Globales",
+        "notas": "Seguimiento de proyecto"
+    },
+    {
+        "nombre": "Héctor",
+        "apellido": "Ruiz",
+        "email": "hector@example.com",
+        "telefono": "1239874560",
+        "empresa": "Servicios Logísticos",
+        "notas": "Envío de cotización"
+    },
+    {
+        "nombre": "Isabel",
+        "apellido": "Mendoza",
+        "email": "isabel@example.com",
+        "telefono": "7894561230",
+        "empresa": "Inversiones Internacionales",
+        "notas": "Acordar fecha de entrega"
+    },
+    {
+        "nombre": "Ricardo",
+        "apellido": "Navarro",
+        "email": "ricardo@example.com",
+        "telefono": "3216549870",
+        "empresa": "Desarrollo de Software",
+        "notas": "Revisión de propuesta"
+    },
+    {
+        "nombre": "Carmen",
+        "apellido": "Gutiérrez",
+        "email": "carmen@example.com",
+        "telefono": "4567890123",
+        "empresa": "Consultoría Legal",
+        "notas": "Reunión de seguimiento"
+    },
+    {
+        "nombre": "Pablo",
+        "apellido": "Vega",
+        "email": "pablo@example.com",
+        "telefono": "9876543210",
+        "empresa": "Servicios Financieros",
+        "notas": "Contactar la próxima semana"
+    }
+]
